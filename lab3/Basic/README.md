@@ -5,18 +5,15 @@
 1. 对于1+1将会被demo中认为是储存起来的code（误判断为1），我会输出SYNTAX ERROR。
 	```1+1
 	SYNTAX ERROR
-	```
 2. 对于关键字被作为变量名的情况，我做了特殊的判断：
 	```let then = 1
 	then: ONE OF KEYWORD
-	```
 3. 对于run，clear，list等指令，我不会误认为其是program的指令
 	```10 help
 	11 clear
 	12 run
 	list
 	//不会输出任何东西
-	```
 4. 我能处理表达式带有空格的情况，也能区分printx（输出错误）等没有带空格的情况。
 5. 空行输入不会产生syntax error。
 6. 变量名中可以带有数字，但不能是第一位。
@@ -25,7 +22,6 @@
 	1
 	let 3n = 1
 	variable cannot start with numbers
-	```
 
 ####一些漏洞，诚实的说：
 
