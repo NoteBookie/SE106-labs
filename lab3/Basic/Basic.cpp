@@ -169,7 +169,7 @@ public:
 			if(IsEqual(n,"quit"))  	exit(0);else 
 			if(IsEqual(n,"list"))  	list();	else 
 			if(IsEqual(n,"help"))  	help();	else 
-			if(n == "")				continue;else
+			if(NoSpace(n) == "")	continue;else
 									judge_if_now(s);
 		}
 		return;
@@ -279,10 +279,6 @@ public:
 			for(int i = 0; i < s.size(); i++){
 				if(s[i] >= '0' && s[i] <= '9')  n += s[i];
 				else break;
-				//else {
-				//	cout << "SYNTAX ERROR\n";
-				//	return;
-				//}
 			}
 			num = atoi(n.c_str());
 			code = (s.size()!=n.size()) ? s.substr(n.size() + 1):"";
@@ -397,7 +393,6 @@ public:
 			iter++;
 			if(status == 1)	break;
 			if(status == 2) iter--;
-			
 		}
 		//list();
 	}
