@@ -11,7 +11,7 @@ int main( )
   
     const int NEG_INF = -9999;
     RedBlackTree<int> t( NEG_INF );
-    int NUMS = 400000;
+    int NUMS = 40000;
     const int GAP  =   37;
     int i,c = 0;
 

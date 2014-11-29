@@ -51,9 +51,9 @@ class RedBlackTree
 
     ~RedBlackTree( )
     {
-        // makeEmpty( );
-        // delete nullNode;
-        // delete header;
+        makeEmpty( );
+        delete nullNode;
+        delete header;
     }
 
     const Comparable & findMin( ) const
@@ -228,7 +228,7 @@ class RedBlackTree
         // Usual recursive stuff
     void reclaimMemory( RedBlackNode *t )
     {
-        if( t != t->left )
+        if( t != nullNode )
         {
             reclaimMemory( t->left );
             reclaimMemory( t->right );
@@ -319,21 +319,6 @@ class RedBlackTree
         k2->left = k1;
         k1 = k2;
     }
-
-    // RedBlackNode* getParent(RedBlackNode* child) {
-    //     if (child == nullNode)
-    //         exit(0);
-    //     RedBlackNode* index = header;
-    //     while (index != nullNode) {
-    //         if (index->left == child || index->right == child) 
-    //             break;
-    //         else if (child->element < index->element)
-    //             index = index->left;
-    //         else
-    //             index = index->right;
-    //     }
-    //     return index;
-    // }
 
     void transplant(RedBlackNode* u, RedBlackNode* v) {
         if (u == header->right)
